@@ -1,5 +1,9 @@
 public abstract class State
 {
+    public void Init(StateMachine stateMachine)
+    {
+        _stateMachine = stateMachine;
+    }
     protected StateMachine _stateMachine;
 
     /// <summary>

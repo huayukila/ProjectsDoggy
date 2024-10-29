@@ -14,7 +14,9 @@ public abstract class StateMachine : MonoBehaviour
 
     protected WhiteBoard _whiteBoard = new WhiteBoard();
 
-    protected Animator _animator;
+    private Animator _animator;
+
+    public Animator Animator => _animator;
 
     void Awake()
     {
@@ -38,16 +40,22 @@ public abstract class StateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_currentState == null)
+            return;
         _currentState.LogicUpdate();
     }
 
     private void FixedUpdate()
     {
+        if (_currentState == null)
+            return;
         _currentState.PhysicUpdate();
     }
 
     private void LateUpdate()
     {
+        if (_currentState == null)
+            return;
         _currentState.CameraUpdate();
     }
 
@@ -59,7 +67,11 @@ public abstract class StateMachine : MonoBehaviour
     {
         if (_states.TryGetValue(stateName, out State targetState))
         {
-            _currentState.OnExit();
+            if (_currentState != null)
+            {
+                _currentState.OnExit();
+            }
+
             _currentState = targetState;
             _currentState.OnEnter();
         }
@@ -74,6 +86,9 @@ public abstract class StateMachine : MonoBehaviour
         if (!_states.TryAdd(stateName, state))
         {
             Debug.LogError(stateName + "ÇÕä˘Ç…ë∂ç›ÇµÇƒÇ¢Ç‹Ç∑");
+            return;
         }
+
+        state.Init(this);
     }
 }
