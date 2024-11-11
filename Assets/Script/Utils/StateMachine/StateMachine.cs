@@ -1,18 +1,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public abstract class StateMachine : MonoBehaviour
 {
     //キャラクタの情報を保存する用容器
-    protected class WhiteBoard
+    public class WhiteBoard
     {
+        public Vector3 _gravity = Vector3.zero;
+        public Vector3 moveDirection = Vector3.zero;
+        public float moveSpeed = 5f; 
+        public float lookSpeed = 4f;
+
+        public float rotationX = 0f;
+        public float rotationY = 0f;
     }
 
     protected Dictionary<string, State> _states = new Dictionary<string, State>();
 
     protected State _currentState;
 
-    protected WhiteBoard _whiteBoard = new WhiteBoard();
+    public WhiteBoard _whiteBoard = new WhiteBoard();
 
     private Animator _animator;
 
@@ -38,21 +46,21 @@ public abstract class StateMachine : MonoBehaviour
     protected abstract void Init();
 
     // Update is called once per frame
-    void Update()
+   protected virtual void Update()
     {
         if (_currentState == null)
             return;
         _currentState.LogicUpdate();
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (_currentState == null)
             return;
         _currentState.PhysicUpdate();
     }
 
-    private void LateUpdate()
+    protected virtual void LateUpdate()
     {
         if (_currentState == null)
             return;
