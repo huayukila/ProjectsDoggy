@@ -14,6 +14,6 @@ public class PlayerStateMachine : StateMachine
     protected override void Update()
     {
         base.Update();
-        cController.Move(_whiteBoard._gravity * Time.deltaTime);
+        cController.Move(_whiteBoard.gravity * Time.deltaTime);
     }
 }

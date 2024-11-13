@@ -7,7 +7,7 @@ public abstract class StateMachine : MonoBehaviour
     //キャラクタの情報を保存する用容器
     public class WhiteBoard
     {
-        public Vector3 _gravity = Vector3.zero;
+        public Vector3 gravity = Vector3.zero;
         public Vector3 moveDirection = Vector3.zero;
         public float moveSpeed = 5f; 
         public float lookSpeed = 4f;
