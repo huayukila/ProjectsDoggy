@@ -32,7 +32,7 @@ public class PlayerWalk : State
 
         sm.transform.localRotation = Quaternion.Euler(-sm._whiteBoard.rotationY, sm._whiteBoard.rotationX, 0f);
 
-        if (moveVertical == 0 || moveHorizontal == 0)
+        if (moveVertical == 0 && moveHorizontal == 0)
         {
             sm.ChangeStateTo("PlayerStand");
         }

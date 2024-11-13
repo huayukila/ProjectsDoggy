@@ -24,7 +24,7 @@ public class PlayerStand : State
         }
 
 
-        if (sm.inputController.isInput)
+        if (sm.inputController.isInput==false)
         {
             sm.ChangeStateTo("PlayerWalk");
         }
@@ -33,7 +33,7 @@ public class PlayerStand : State
     public override void OnEnter()
     {
         Debug.Log("Stand");
-        (_stateMachine as PlayerStateMachine)._whiteBoard._gravity.y = -9.8f;
+        (_stateMachine as PlayerStateMachine)._whiteBoard.gravity.y = -9.8f;
     }
 
     public override void OnExit()
