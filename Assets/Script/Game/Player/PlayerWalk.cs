@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerWalk : State
 {
@@ -22,15 +21,6 @@ public class PlayerWalk : State
 
         sm.cController.Move(sm._whiteBoard.moveDirection * Time.deltaTime);
 
-
-        float lookHorizontal = Input.GetAxis("RightStickHorizontal");
-        float lookVertical = Input.GetAxis("RigthStickVertical");
-
-        sm._whiteBoard.rotationX += lookHorizontal * sm._whiteBoard.lookSpeed;
-        sm._whiteBoard.rotationY -= lookVertical * sm._whiteBoard.lookSpeed;
-        sm._whiteBoard.rotationY = Mathf.Clamp(sm._whiteBoard.rotationY, -60f, 60f);
-
-        sm.transform.localRotation = Quaternion.Euler(-sm._whiteBoard.rotationY, sm._whiteBoard.rotationX, 0f);
 
         if (moveVertical == 0 && moveHorizontal == 0)
         {
