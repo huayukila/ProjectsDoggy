@@ -9,9 +9,10 @@ public abstract class StateMachine : MonoBehaviour
     {
         public Vector3 gravity = Vector3.zero;
         public Vector3 moveDirection = Vector3.zero;
-        public float moveSpeed = 5f; 
+        public float moveSpeed = 5f;
+        
+        //ÉJÉÅÉâêßå‰-------------------
         public float lookSpeed = 4f;
-
         public float rotationX = 0f;
         public float rotationY = 0f;
     }

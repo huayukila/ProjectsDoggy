@@ -9,13 +9,13 @@ public class PlayerInputController : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        if (moveVertical == 0 || moveHorizontal == 0)
+        if (moveVertical == 0 && moveHorizontal == 0)
         {
-            isInput = true;
+            isInput = false;
         }
         else
         {
-            isInput = false;
+            isInput = true;
         }
     }
 }
