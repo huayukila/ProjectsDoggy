@@ -17,5 +17,17 @@ public class PlayerInputController : MonoBehaviour
         {
             isInput = true;
         }
+
+        //“õ‚¢‚ğšk‚®ƒ{ƒ^ƒ“
+        //TODO:UI§Œä‚Ìˆ‚É‘‚­
+        //if (Input.GetButtonDown("SmellKey"))
+        //{
+        //    EventSystem.Send<PlayerSmellEvent>();
+        //    Debug.Log("Smell");
+        //}
+        //if (Input.GetButtonUp("SmellKey"))
+        //{
+        //    Debug.Log("SmellOver");
+        //}
     }
 }
