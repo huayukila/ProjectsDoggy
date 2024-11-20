@@ -15,6 +15,13 @@ public class EnemyWalk : State
 
     public override void LogicUpdate()
     {
+        // プレイヤーが検出されている場合はChaseモードに移行
+        if ((_stateMachine as EnemyStateMachine).playerInSight)
+        {
+            _stateMachine.ChangeStateTo("Enemychase");
+            return;
+        }
+
         if (Vector3.Distance(_stateMachine.transform.position, currentTargetPos) < 1f)
         {
             pointIndex++;
@@ -26,6 +33,8 @@ public class EnemyWalk : State
         Vector3 dir= currentTargetPos - _stateMachine.transform.position;
 
         _stateMachine.transform.position += dir.normalized * Time.deltaTime * speed;
+
+
     }
 
     public override void OnExit()

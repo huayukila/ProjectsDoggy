@@ -11,6 +11,13 @@ public class EnemyStand : State
 
     public override void LogicUpdate()
     {
+        // プレイヤーが検出されている場合はChaseモードに移行
+        if ((_stateMachine as EnemyStateMachine).playerInSight)
+        {
+            _stateMachine.ChangeStateTo("Enemychase");
+            return;
+        }
+
         _stateMachine.transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
 
         timer += Time.deltaTime;
