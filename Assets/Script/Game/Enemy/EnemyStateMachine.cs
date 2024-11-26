@@ -24,7 +24,7 @@ public class EnemyStateMachine : StateMachine
     {
         if (player == null)
             return false;
-        Vector3 enemyToPlayerVec = player.position - gameObject.transform.position;
+        Vector3 enemyToPlayerVec = player.position- gameObject.transform.position;
 
 
         float angle = Vector3.Angle(transform.forward, enemyToPlayerVec);
@@ -41,10 +41,10 @@ public class EnemyStateMachine : StateMachine
 
 
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, gameObject.transform.forward * 5);
+        Gizmos.DrawRay(transform.position, gameObject.transform.forward*5);
         Gizmos.DrawWireSphere(transform.position, collider.radius);
 
-        Gizmos.color = Color.blue;
+        Gizmos.color= Color.blue;
         Gizmos.DrawWireSphere(transform.position, ChaseDistance);
     }
 

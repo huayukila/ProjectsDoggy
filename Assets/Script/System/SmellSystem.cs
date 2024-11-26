@@ -5,8 +5,7 @@ public class SmellSystem : MonoBehaviour
 {
     //TODO:匂いのエフェクトの開閉制御
     [Header("匂いのエフェクトを入れる")]
-    public Transform SmellsRoot;
-    private Transform[] smells;
+    public List<GameObject> Smells = new List<GameObject>();
     private void OnEnable()
     {
         EventSystem.Register<EventPlayerSmell>(e =>
@@ -19,10 +18,7 @@ public class SmellSystem : MonoBehaviour
             PlayerLostSmell();
         }).UnregisterWhenGameObjectDestroyed(gameObject);
     }
-    private void Start()
-    {
-        smells = SmellsRoot.GetComponentsInChildren<Transform>();
-    }
+    
     //匂いを嗅ぐ
     public void PlayerSmell()
     {
@@ -36,23 +32,16 @@ public class SmellSystem : MonoBehaviour
     }
     private void SmellEffectOn()
     {
-        foreach(Transform smell in smells)
+        foreach(GameObject smell in Smells)
         {
-            smell.gameObject.SetActive(true);
+            smell.SetActive(true);
         }
     }
     private void SmellEffectOff()
     {
-        foreach (Transform smell in SmellsRoot.GetComponentsInChildren<Transform>())
+        foreach (GameObject smell in Smells)
         {
-            smell.gameObject.SetActive(false);
-        }
-    }
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.X))
-        {
-            EventSystem.Send<EventPlayerLostSmell>();
+            smell.SetActive(false);
         }
     }
 }

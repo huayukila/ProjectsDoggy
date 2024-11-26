@@ -7,7 +7,7 @@ public class Enemychase : State
     float speed = 5.0f;
     public override void CameraUpdate()
     {
-
+       
     }
 
     public override void LogicUpdate()
@@ -35,11 +35,11 @@ public class Enemychase : State
 
     public override void OnExit()
     {
-
+        
     }
 
     public override void PhysicUpdate()
     {
-
+        
     }
 }

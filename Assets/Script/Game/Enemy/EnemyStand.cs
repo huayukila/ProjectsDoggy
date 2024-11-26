@@ -22,7 +22,7 @@ public class EnemyStand : State
 
         timer += Time.deltaTime;
 
-        if (timer >= waitTime)
+        if(timer >= waitTime)
         {
             _stateMachine.ChangeStateTo("EnemyWalk");
         }
@@ -36,11 +36,11 @@ public class EnemyStand : State
 
     public override void OnExit()
     {
-
+        
     }
 
     public override void PhysicUpdate()
     {
-
+        
     }
 }
