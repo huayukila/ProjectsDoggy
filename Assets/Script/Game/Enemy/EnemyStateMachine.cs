@@ -5,7 +5,9 @@ using UnityEngine.AI;
 public class EnemyStateMachine : StateMachine
 {
     public Transform[] walkPoints;
+    [HideInInspector]
     public Transform player;       // プレイヤーのTransform（追跡対象）
+    [HideInInspector]
     public bool playerInSight;     // プレイヤーが視界内かどうか
     public float ChaseDistance;
 
