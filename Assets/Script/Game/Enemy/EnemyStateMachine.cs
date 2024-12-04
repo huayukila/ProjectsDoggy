@@ -10,11 +10,15 @@ public class EnemyStateMachine : StateMachine
     [HideInInspector]
     public bool playerInSight;     // ÉvÉåÉCÉÑÅ[Ç™éãäEì‡Ç©Ç«Ç§Ç©
     public float ChaseDistance;
+    [HideInInspector]
+    public NavMeshAgent NavMeshAgent;
 
     private SphereCollider collider;
     protected override void Init()
     {
         collider = GetComponent<SphereCollider>();
+        NavMeshAgent = GetComponent<NavMeshAgent>();
+        NavMeshAgent.updateRotation = false;
         AddState("EnemyWalk", new EnemyWalk());
         AddState("EnemyStand", new EnemyStand());
         AddState("Enemychase", new Enemychase());
@@ -26,7 +30,7 @@ public class EnemyStateMachine : StateMachine
     {
         if (player == null)
             return false;
-        Vector3 enemyToPlayerVec = player.position- gameObject.transform.position;
+        Vector3 enemyToPlayerVec = player.position - gameObject.transform.position;
 
 
         float angle = Vector3.Angle(transform.forward, enemyToPlayerVec);
@@ -43,21 +47,22 @@ public class EnemyStateMachine : StateMachine
 
 
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, gameObject.transform.forward*5);
+        Gizmos.DrawRay(transform.position, gameObject.transform.forward * 5);
         Gizmos.DrawWireSphere(transform.position, collider.radius);
 
-        Gizmos.color= Color.blue;
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, ChaseDistance);
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") && !playerInSight)
+        if (other.CompareTag("Player"))
         {
             player = other.gameObject.transform;
-
+                Debug.Log(1);
             if (TryCheckPlayerInSight())
             {
+                Debug.Log(2);
                 playerInSight = true;
             }
         }

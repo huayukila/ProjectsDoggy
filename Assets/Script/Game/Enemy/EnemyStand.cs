@@ -18,7 +18,7 @@ public class EnemyStand : State
             return;
         }
 
-        _stateMachine.transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
+        //_stateMachine.transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
 
         timer += Time.deltaTime;
 
