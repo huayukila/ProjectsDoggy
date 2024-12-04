@@ -5,10 +5,12 @@ public class EnemyWalk : State
 {
     int pointIndex=0;
     Vector3 currentTargetPos;
+    NavMeshAgent agent;
     float speed = 3.0f;
 
     public override void OnEnter()
     {
+        agent = (_stateMachine as EnemyStateMachine).NavMeshAgent;
         Debug.Log("Enemywalk");
         currentTargetPos = (_stateMachine as EnemyStateMachine).walkPoints[pointIndex].position;
     }
@@ -30,10 +32,7 @@ public class EnemyWalk : State
             _stateMachine.ChangeStateTo("EnemyStand");
         }
 
-        Vector3 dir= currentTargetPos - _stateMachine.transform.position;
-
-        _stateMachine.transform.position += dir.normalized * Time.deltaTime * speed;
-
+        agent.SetDestination(currentTargetPos);
 
     }
 
