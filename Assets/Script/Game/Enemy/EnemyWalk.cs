@@ -10,6 +10,7 @@ public class EnemyWalk : State
 
     public override void OnEnter()
     {
+        _stateMachine.Animator.Play("WALKING");
         agent = (_stateMachine as EnemyStateMachine).NavMeshAgent;
         Debug.Log("Enemywalk");
         currentTargetPos = (_stateMachine as EnemyStateMachine).walkPoints[pointIndex].position;

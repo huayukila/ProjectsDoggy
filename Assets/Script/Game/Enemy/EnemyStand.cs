@@ -30,7 +30,7 @@ public class EnemyStand : State
 
     public override void OnEnter()
     {
-        Debug.Log("EnemyStand");
+        _stateMachine.Animator.Play("IDOL");
         timer = 0f;
     }
 

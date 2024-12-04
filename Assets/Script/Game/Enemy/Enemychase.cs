@@ -17,10 +17,6 @@ public class Enemychase : State
         if (target == null) return;
 
         // プレイヤーに向かって移動
-        //Vector3 dir = target.position - _stateMachine.transform.position;
-
-        //_stateMachine.transform.position += dir.normalized * Time.deltaTime * speed;
-
         agent.SetDestination(target.position);
 
         // プレイヤーが追いかけ範囲から離れた場合、通常の歩行モードに戻る
@@ -34,6 +30,7 @@ public class Enemychase : State
 
     public override void OnEnter()
     {
+        _stateMachine.Animator.Play("RUN");
         Debug.Log("EnemyChase");
         target = (_stateMachine as EnemyStateMachine).player; // プレイヤーの参照を取得
         agent = (_stateMachine as EnemyStateMachine).NavMeshAgent;

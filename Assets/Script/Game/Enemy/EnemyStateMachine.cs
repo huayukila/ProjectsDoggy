@@ -18,7 +18,6 @@ public class EnemyStateMachine : StateMachine
     {
         collider = GetComponent<SphereCollider>();
         NavMeshAgent = GetComponent<NavMeshAgent>();
-        NavMeshAgent.updateRotation = false;
         AddState("EnemyWalk", new EnemyWalk());
         AddState("EnemyStand", new EnemyStand());
         AddState("Enemychase", new Enemychase());
@@ -34,7 +33,6 @@ public class EnemyStateMachine : StateMachine
 
 
         float angle = Vector3.Angle(transform.forward, enemyToPlayerVec);
-        Debug.Log(angle);
         if (enemyToPlayerVec.magnitude < ChaseDistance || (angle < 30 && angle > -30))
             return true;
         return false;
@@ -59,10 +57,8 @@ public class EnemyStateMachine : StateMachine
         if (other.CompareTag("Player"))
         {
             player = other.gameObject.transform;
-                Debug.Log(1);
             if (TryCheckPlayerInSight())
             {
-                Debug.Log(2);
                 playerInSight = true;
             }
         }
