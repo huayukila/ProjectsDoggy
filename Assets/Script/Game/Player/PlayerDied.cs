@@ -13,6 +13,8 @@ public class PlayerDied : MonoBehaviour
 
                 if (camera != null)
                 {
+                    EventSystem.Send<EventPlayerWasCaught>();//“G‚ÌƒAƒjƒ‚ğ’â~‚·‚é
+
                     camera.GetComponent<CinemachineCamera>().enabled = true;
 
                     if (gameObject.activeSelf)
