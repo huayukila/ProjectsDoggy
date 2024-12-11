@@ -21,8 +21,13 @@ public class EnemyStateMachine : StateMachine
         AddState("EnemyWalk", new EnemyWalk());
         AddState("EnemyStand", new EnemyStand());
         AddState("Enemychase", new Enemychase());
+        AddState("Enemycatch", new Enemycatch());
 
         ChangeStateTo("EnemyWalk");
+        EventSystem.Register<EventPlayerWasCaught>(e =>
+        {
+            ChangeStateTo("Enemycatch");
+        }).UnregisterWhenGameObjectDestroyed(gameObject);
     }
 
     bool TryCheckPlayerInSight()
