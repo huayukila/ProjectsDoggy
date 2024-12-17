@@ -10,7 +10,6 @@ public class EnemyJumpScare1 : MonoBehaviour
 
     private float currentTime;
     private bool isStart;
-
     private void Awake()
     {
         enemy.gameObject.SetActive(false);
