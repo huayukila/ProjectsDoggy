@@ -24,11 +24,11 @@ public class SmellUIController : MonoBehaviour
         if (IsSmelled == false)
         {
             //“õ‚¢‚ðšk‚®ƒ{ƒ^ƒ“
-            if (Input.GetButtonDown("SmellKey")||Input.GetKeyDown(KeyCode.F))
+            if (Input.GetButtonDown("SmellKey")||Input.GetKeyDown(KeyCode.R))
             {
                 Debug.Log("StartSmell");
             }
-            if (Input.GetButton("SmellKey") || Input.GetKey(KeyCode.F))
+            if (Input.GetButton("SmellKey") || Input.GetKey(KeyCode.R))
             {
                 Smell_UI.DOFillAmount(1.2f, FillDuration);
                 if (Smell_UI.fillAmount >= 0.99f)
@@ -43,7 +43,7 @@ public class SmellUIController : MonoBehaviour
             }
 
         }
-        if (Input.GetButtonUp("SmellKey") || Input.GetKeyUp(KeyCode.F))
+        if (Input.GetButtonUp("SmellKey") || Input.GetKeyUp(KeyCode.R))
         {
             Debug.Log("SmellOver");
             Smell_UI.DOFillAmount(0f, FillDuration);
