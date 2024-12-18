@@ -13,6 +13,8 @@ public class EnemyStateMachine : StateMachine
     [HideInInspector]
     public NavMeshAgent NavMeshAgent;
 
+    public GameObject enemyAreaLight;
+
     private SphereCollider collider;
     protected override void Init()
     {
@@ -26,6 +28,7 @@ public class EnemyStateMachine : StateMachine
         ChangeStateTo("EnemyWalk");
         EventSystem.Register<EventPlayerWasCaught>(e =>
         {
+            enemyAreaLight.SetActive(true);
             ChangeStateTo("Enemycatch");
         }).UnregisterWhenGameObjectDestroyed(gameObject);
     }
