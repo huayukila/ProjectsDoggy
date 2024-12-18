@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerPickUpBall : MonoBehaviour
@@ -24,7 +25,7 @@ public class PlayerPickUpBall : MonoBehaviour
 
     public float PickupDistance = 1f;  // ピックアップの距離
     public LayerMask PickupLayer;  // ピックアップの対象レイヤー
-    public Renderer PlayerBall;  // プレイヤーのボールのレンダラー
+    public List<Renderer> PlayerBalls = new List<Renderer>();
 
     private BallGimmick _ballGimmick;  // BallGimmickクラスのインスタンス
     private Camera _mainCamera;  // メインカメラ
@@ -33,13 +34,18 @@ public class PlayerPickUpBall : MonoBehaviour
     public void AddBollCnt()
     {
         BollCnt++;
-        PlayerBall.enabled = true;
+        for (int i = 0; i < BollCnt; i++)
+        {
+            PlayerBalls[i].enabled = true;
+        }
+
         Debug.Log(BollCnt.ToString());
     }
 
     // ボールの数を減らすメソッド
     public void SubBollCnt()
     {
+        PlayerBalls[BollCnt].enabled = false;
         BollCnt--;
         Debug.Log(BollCnt.ToString());
     }
@@ -48,7 +54,10 @@ public class PlayerPickUpBall : MonoBehaviour
     public void ClearBollCnt()
     {
         BollCnt = 0;
-        PlayerBall.enabled = false;
+        foreach (Renderer r in PlayerBalls)
+        {
+            r.enabled = false;
+        }
     }
 
     void Start()
@@ -80,7 +89,7 @@ public class PlayerPickUpBall : MonoBehaviour
                 || Input.GetKeyDown(KeyCode.F))
             {
                 // 当たったオブジェクトが「OOO」レイヤーの場合
-                if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Water"))
+                if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ball"))
                 {
                     hit.collider.gameObject.SetActive(false);  // オブジェクトを非アクティブにする
                     AddBollCnt();  // ボールの数を増やす
