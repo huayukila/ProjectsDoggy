@@ -26,9 +26,13 @@ public class EnemyJumpScare2 : MonoBehaviour
 
     public void EnemyHide()
     {
-        Player = null;
-        Enemy.transform.DOKill();
         Enemy.SetActive(false);
+    }
+
+    public void KillAndHide()
+    {
+        Enemy.transform.DOKill();
+        EnemyHide();
     }
 
     public void RunToPlayer()
@@ -50,5 +54,10 @@ public class EnemyJumpScare2 : MonoBehaviour
             _animator.Play("EnemyFlick");
             isPlayerEnter = true;
         }
+    }
+
+    public void ClearPlayerTrans()
+    {
+        Player = null;
     }
 }
