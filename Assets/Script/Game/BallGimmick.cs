@@ -31,7 +31,8 @@ public class BallGimmick : MonoBehaviour
     {
         foreach (GameObject obj in BallList)
         {
-            obj.GetComponent<Renderer>().enabled = false;
+            //obj.GetComponent<Renderer>().enabled = false;
+            obj.SetActive(false);
         }
     }
     public void UpdateBallGimmick(int addValue)
@@ -40,7 +41,8 @@ public class BallGimmick : MonoBehaviour
 
         for(int i = 0; i < AllGimmickBallCnt; i++)
         {
-            BallList[i].GetComponent<Renderer>().enabled = true;
+            //BallList[i].GetComponent<Renderer>().enabled = true;
+            BallList[i].SetActive(true);
         }
 
         Debug.Log("Gimmick:"+AllGimmickBallCnt.ToString());
