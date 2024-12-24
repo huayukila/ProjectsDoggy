@@ -83,7 +83,6 @@ public class PlayerPickUpBall : MonoBehaviour
         // レイキャストを実行
         if (Physics.Raycast(ray, out hit, PickupDistance, PickupLayer))
         {
-            Debug.Log(hit.ToString());
             // 「Aボタン」または「Fキー」が押された場合
             if (Input.GetButtonDown("AButton")
                 || Input.GetKeyDown(KeyCode.F))

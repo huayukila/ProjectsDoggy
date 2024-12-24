@@ -20,7 +20,6 @@ public class PlayerStand : State
 
     public override void OnEnter()
     {
-        Debug.Log("Stand");
         (_stateMachine as PlayerStateMachine)._whiteBoard.gravity.y = -9.8f;
     }
 

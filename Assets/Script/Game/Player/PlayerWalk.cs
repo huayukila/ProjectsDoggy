@@ -30,7 +30,6 @@ public class PlayerWalk : State
 
     public override void OnEnter()
     {
-        Debug.Log("Walk");
     }
 
     public override void OnExit()

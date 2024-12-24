@@ -44,7 +44,5 @@ public class BallGimmick : MonoBehaviour
             //BallList[i].GetComponent<Renderer>().enabled = true;
             BallList[i].SetActive(true);
         }
-
-        Debug.Log("Gimmick:"+AllGimmickBallCnt.ToString());
     }
 }
