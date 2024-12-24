@@ -193,26 +193,7 @@ MonoBehaviour:
       - rid: 3629812738689073175
       - rid: 3629812738689073176
     m_RuntimeSettings:
-      m_List:
-      - rid: 8556427327610290176
-      - rid: 8556427327610290180
-      - rid: 3629812738689073152
-      - rid: 3629812738689073153
-      - rid: 3629812738689073156
-      - rid: 3629812738689073157
-      - rid: 3629812738689073158
-      - rid: 3629812738689073160
-      - rid: 3629812738689073163
-      - rid: 3629812738689073164
-      - rid: 3629812738689073165
-      - rid: 3629812738689073166
-      - rid: 3629812738689073167
-      - rid: 3629812738689073169
-      - rid: 3629812738689073170
-      - rid: 3629812738689073173
-      - rid: 3629812738689073174
-      - rid: 3629812738689073175
-      - rid: 3629812738689073176
+      m_List: []
   renderingLayerNames:
   - Light Layer default
   - Light Layer 1
@@ -471,7 +452,7 @@ MonoBehaviour:
         m_Camera:
           bitDatas:
             data1: 72198260625768269
-            data2: 13799031439032811544
+            data2: 13799031335685160984
           lodBias: 1
           lodBiasMode: 0
           lodBiasQualityLevel: 0
@@ -487,7 +468,7 @@ MonoBehaviour:
         m_CustomOrBakedReflection:
           bitDatas:
             data1: 135310754214733
-            data2: 4539628428684460056
+            data2: 4539628428685901848
           lodBias: 1
           lodBiasMode: 0
           lodBiasQualityLevel: 0
