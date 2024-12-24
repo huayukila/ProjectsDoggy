@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Enemychase : State
 {
@@ -33,7 +32,7 @@ public class Enemychase : State
 
     public override void OnExit()
     {
-        (_stateMachine as EnemyStateMachine).player = null;
+        Debug.Log("Exit");
     }
 
     public override void PhysicUpdate()
