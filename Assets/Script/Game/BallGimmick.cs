@@ -14,12 +14,12 @@ public class BallGimmick : MonoBehaviour
         get => _allGimmickBallCnt;
         set
         {
-            _allGimmickBallCnt = value; 
-            if(_allGimmickBallCnt > BallList.Count)
+            _allGimmickBallCnt = value;
+            if (_allGimmickBallCnt > BallList.Count)
             {
                 _allGimmickBallCnt = BallList.Count;
             }
-        } 
+        }
     }
 
     void Start()
@@ -35,14 +35,20 @@ public class BallGimmick : MonoBehaviour
             obj.SetActive(false);
         }
     }
+
     public void UpdateBallGimmick(int addValue)
     {
         AllGimmickBallCnt += addValue;
 
-        for(int i = 0; i < AllGimmickBallCnt; i++)
+        for (int i = 0; i < AllGimmickBallCnt; i++)
         {
             //BallList[i].GetComponent<Renderer>().enabled = true;
             BallList[i].SetActive(true);
+        }
+
+        if (AllGimmickBallCnt == BallList.Count)
+        {
+            EventSystem.Send<EventOpenTheDoor>();
         }
     }
 }

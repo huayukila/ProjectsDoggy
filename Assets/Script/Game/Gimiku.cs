@@ -12,14 +12,6 @@ public class Gimiku : MonoBehaviour
             .UnregisterWhenGameObjectDestroyed(gameObject);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            EventSystem.Send<EventOpenTheDoor>();
-        }
-    }
-
     void HandleOpenTheDoor()
     {
         Door.DOLocalMoveX(-118, 3f);

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2910891561794390823}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.32, z: 0.187}
+  m_LocalPosition: {x: 0, y: 1.358, z: 0.187}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,8 +44,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.48849982
-  m_Range: 105
+  m_Intensity: 0.21702985
+  m_Range: 70
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
   m_FadeDistance: 10000
-  m_VolumetricFadeDistance: 10000
+  m_VolumetricFadeDistance: 100
   m_AffectDiffuse: 1
   m_AffectSpecular: 1
   m_NonLightmappedOnly: 0
@@ -267,7 +267,7 @@ Transform:
   m_GameObject: {fileID: 7378335886044159212}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.438, y: 1.844, z: 0.862}
+  m_LocalPosition: {x: -0.438, y: 3.64, z: 0.862}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -284,8 +284,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 12.892467
-  m_Range: 10
+  m_Intensity: 43.405926
+  m_Range: 8.24
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -490,8 +490,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1318093249469263210}
   - component: {fileID: 4264560164462426806}
-  - component: {fileID: 4208631382567156267}
   - component: {fileID: 8758637338339634700}
+  - component: {fileID: 2664835835280431406}
   m_Layer: 0
   m_Name: JumpScare2
   m_TagString: Untagged
@@ -530,27 +530,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 4636101269971188117}
---- !u!65 &4208631382567156267
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8866858602805925080}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 10.607908, y: 3.1565664, z: 1}
-  m_Center: {x: 0.52947617, y: -0.5570718, z: 19.49}
 --- !u!95 &8758637338339634700
 Animator:
   serializedVersion: 7
@@ -573,6 +552,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!135 &2664835835280431406
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866858602805925080}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 12.617085
+  m_Center: {x: -0.000000110644606, y: 0, z: 4.2470875}
 --- !u!1001 &5519113357272253636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -583,19 +583,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 97f5d06a130764642b7d2a4b38ef39a6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.7
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97f5d06a130764642b7d2a4b38ef39a6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.7
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97f5d06a130764642b7d2a4b38ef39a6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.7
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97f5d06a130764642b7d2a4b38ef39a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.31988978
+      value: 1.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97f5d06a130764642b7d2a4b38ef39a6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -603,7 +603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97f5d06a130764642b7d2a4b38ef39a6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.665
+      value: -1.391
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97f5d06a130764642b7d2a4b38ef39a6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -676,6 +676,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1318093249469263210}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: dde1942e69af54f4483d4d8b8f924270, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dde1942e69af54f4483d4d8b8f924270, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dde1942e69af54f4483d4d8b8f924270, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dde1942e69af54f4483d4d8b8f924270, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.4291103
       objectReference: {fileID: 0}
@@ -714,6 +726,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dde1942e69af54f4483d4d8b8f924270, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dde1942e69af54f4483d4d8b8f924270, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dde1942e69af54f4483d4d8b8f924270, type: 3}
       propertyPath: m_Name

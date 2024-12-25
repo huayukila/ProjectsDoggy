@@ -98,25 +98,24 @@ public class PlayerPickUpBall : MonoBehaviour
                 {
                     _ballGimmick.UpdateBallGimmick(BollCnt);  // BallGimmickの更新
                     ClearBollCnt();  // ボールの数をクリア
-                    EventSystem.Send<EventOpenTheDoor>();  // ドアを開くイベントを送信
                 }
             }
         }
 
-#if UNITY_EDITOR
-        // 「Oキー」が押された場合
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            AddBollCnt();  // ボールの数を増やす
-        }
-        // 「Pキー」が押された場合
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            _ballGimmick.UpdateBallGimmick(BollCnt);  // BallGimmickの更新
-            ClearBollCnt();  // ボールの数をクリア
-            EventSystem.Send<EventOpenTheDoor>();  // ドアを開くイベントを送信
-        }
-#endif
+// #if UNITY_EDITOR
+//         // 「Oキー」が押された場合
+//         if (Input.GetKeyDown(KeyCode.O))
+//         {
+//             AddBollCnt();  // ボールの数を増やす
+//         }
+//         // 「Pキー」が押された場合
+//         if (Input.GetKeyDown(KeyCode.P))
+//         {
+//             _ballGimmick.UpdateBallGimmick(BollCnt);  // BallGimmickの更新
+//             ClearBollCnt();  // ボールの数をクリア
+//             EventSystem.Send<EventOpenTheDoor>();  // ドアを開くイベントを送信
+//         }
+// #endif
     }
 
     void OnDrawGizmos()
