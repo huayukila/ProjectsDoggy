@@ -13,10 +13,13 @@ public class EnemyJumpScare2 : MonoBehaviour
 
     private Transform Player;
 
+    private AudioSource enemyAudio;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
         enemyAnimator = Enemy.GetComponent<Animator>();
+        enemyAudio = Enemy.GetComponent<AudioSource>();
     }
 
     public void EnemyShow()
@@ -37,7 +40,8 @@ public class EnemyJumpScare2 : MonoBehaviour
 
     public void RunToPlayer()
     {
-        enemyAnimator.Play("RUN");
+        enemyAnimator.Play("Crawl");
+        enemyAudio.Play();
         // Enemy.transform.DOLookAt(position, 0.1f);
         Enemy.transform.DOMove(Player.position, 1f);
     }

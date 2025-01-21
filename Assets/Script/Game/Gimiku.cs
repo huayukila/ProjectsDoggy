@@ -10,10 +10,18 @@ public class Gimiku : MonoBehaviour
     {
         EventSystem.Register<EventOpenTheDoor>(e => { HandleOpenTheDoor(); })
             .UnregisterWhenGameObjectDestroyed(gameObject);
+        HandleOpenTheDoor();
     }
-
+    
     void HandleOpenTheDoor()
     {
-        Door.DOLocalMoveX(-118, 3f);
+        var sequence = DOTween.Sequence();
+        sequence.Append(
+            Door.DOLocalMoveX(-118, 3f)
+                .OnUpdate(() => {
+                    
+                    Door.localPosition += Random.insideUnitSphere * 0.03f;
+                })
+        );
     }
 }
