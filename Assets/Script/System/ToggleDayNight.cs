@@ -42,7 +42,7 @@ public class ToggleDayNight : MonoBehaviour
 
             // Œõ‚Ì‹­‚³‚ğİ’u
             float sunTargetIntensity = isDay ? 100000f : 0f;
-            float moonTargetIntensity = isDay ? 0f : 0.2f;
+            float moonTargetIntensity = isDay ? 0f : 0.3f;
 
             sunLight.intensity = Mathf.Lerp(sunLight.intensity, sunTargetIntensity, transitionProgress);
             moonLight.intensity = Mathf.Lerp(moonLight.intensity, moonTargetIntensity, transitionProgress);
