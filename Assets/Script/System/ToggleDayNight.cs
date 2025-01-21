@@ -6,6 +6,7 @@ public class ToggleDayNight : MonoBehaviour
     public Light moonLight;
     public float transitionDuration = 2f;  // 
     public KeyCode toggleKey = KeyCode.T;  // 
+    public AudioSource changeToNightAudioSource;//–é‚É“]Š·‚·‚é‚Æ‚«‚Ì‰¹Œø
 
     private bool isDay = true;
     private float transitionProgress = 0f;
@@ -27,7 +28,7 @@ public class ToggleDayNight : MonoBehaviour
     {
         if (Input.GetKeyDown(toggleKey))
         {
-            SwitchToMoon();
+            SwitchToMoon();         
         }
 
         if (isTransitioning)
@@ -52,6 +53,7 @@ public class ToggleDayNight : MonoBehaviour
     {
         if (!isTransitioning)
         {
+            changeToNightAudioSource.Play();
             isDay = !isDay;
             isTransitioning = true;
             transitionProgress = 0f;
