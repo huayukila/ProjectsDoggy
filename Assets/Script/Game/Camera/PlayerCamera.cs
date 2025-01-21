@@ -1,6 +1,3 @@
-using DG.Tweening;
-using Unity.Cinemachine;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
