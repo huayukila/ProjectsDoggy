@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class CrowParticleCollider : MonoBehaviour
 {
+    [SerializeField]
     private ParticleSystem _particleSystem;
+
+    [SerializeField]
+    private AudioSource _audioSource;
  
     void Start()
     {
@@ -10,6 +14,16 @@ public class CrowParticleCollider : MonoBehaviour
         if (ob != null)
         {
             _particleSystem = ob.GetComponent<ParticleSystem>();
+        }
+        else
+        {
+            Debug.Log("CrowParticleSystem_NotFound!");
+        }
+
+        GameObject ad = GameObject.Find("CrowAudioSource");
+        if (ob != null)
+        {
+            _audioSource = ad.GetComponent<AudioSource>();
         }
         else
         {
@@ -23,6 +37,7 @@ public class CrowParticleCollider : MonoBehaviour
             if (_particleSystem != null)
             {
                 _particleSystem.Play();
+                _audioSource.Play();
                 gameObject.SetActive(false);
             }
         }

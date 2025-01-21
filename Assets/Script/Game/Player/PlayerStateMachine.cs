@@ -4,6 +4,7 @@ public class PlayerStateMachine : StateMachine
 {
     public CharacterController cController;
     public PlayerInputController inputController;
+    public AudioSource playerWalkingAudio;
     protected override void Init()
     {
         AddState("PlayerStand", new PlayerStand());
