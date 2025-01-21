@@ -10,6 +10,7 @@ public class SwitchToMoonTrigger : MonoBehaviour
         {
             toggleDayNight.SwitchToMoon();
             this.gameObject.SetActive(false);
+            EventSystem.Send<EventSwitchToMoomTrigger>();
         }
     }
 }
