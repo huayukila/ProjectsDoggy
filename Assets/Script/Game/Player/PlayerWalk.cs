@@ -30,10 +30,14 @@ public class PlayerWalk : State
 
     public override void OnEnter()
     {
+        PlayerStateMachine sm = _stateMachine as PlayerStateMachine;
+        sm.playerWalkingAudio.Play();
     }
 
     public override void OnExit()
     {
+        PlayerStateMachine sm = _stateMachine as PlayerStateMachine;
+        sm.playerWalkingAudio.Stop();
     }
 
     public override void PhysicUpdate()

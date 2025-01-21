@@ -40,6 +40,6 @@ public class PlayerCamera : MonoBehaviour
         _rotationX += lookHorizontal * LookSpeed; //コントローラ制御
         _rotationX += mouseX; //マウス制御
 
-        Player.transform.localRotation = Quaternion.Euler(0, _rotationX, 0f);
+        Player.transform.localRotation = Quaternion.Euler(0, _rotationX - 90f, 0f);
     }
 }
