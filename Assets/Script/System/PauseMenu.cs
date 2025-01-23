@@ -9,9 +9,19 @@ public class PauseMenu : MonoBehaviour
 
     private Vector3 _checkPointPosition = default;
 
+    private bool _isPauseMenuON = false;
+
     private void Awake()
     {
-        EventSystem.Register<EventUpdateCheckPoint>(e => { UpdateCheckPointPosition(); }).UnregisterWhenGameObjectDestroyed(gameObject);
+        EventSystem.Register<EventUpdateCheckPoint>(e =>
+        {
+            UpdateCheckPointPosition();
+        }).UnregisterWhenGameObjectDestroyed(gameObject);
+
+        EventSystem.Register<EventLoadCheckPoint>(e =>
+        {
+            PositionSwitcher.Instance.Load(1f, _checkPointPosition); ;
+        }).UnregisterWhenGameObjectDestroyed(gameObject);
     }
 
     void Start()
@@ -22,21 +32,18 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("PauseMenu")
-            || Input.GetKeyDown(KeyCode.P))
+        if (Input.GetButtonDown("PauseMenu") || Input.GetKeyDown(KeyCode.P))
         {
-            EventSystem.Send<EventGamePause>();
-            GameObject_PauseMenu.SetActive(true);
+            if (GameObject_PauseMenu.gameObject.activeSelf == false)
+            {
+                EventSystem.Send<EventGamePause>();
+                GameObject_PauseMenu.SetActive(true);
+            }
+            else
+            {
+                ResumeButton();
+            }
         }
-
-
-        //if (Input.GetButtonDown("PauseMenu")
-        //    || Input.GetKeyDown(KeyCode.P)
-        //    || GameObject_PauseMenu.activeSelf == true)
-        //{
-        //    EventSystem.Send<EventGameResume>();
-        //    GameObject_PauseMenu.SetActive(false);
-        //}
     }
     public void UpdateCheckPointPosition()
     {
@@ -54,7 +61,6 @@ public class PauseMenu : MonoBehaviour
     {
         ResumeButton();
         EventSystem.Send<EventLoadCheckPoint>();
-        PositionSwitcher.Instance.Load(1f, _checkPointPosition);
     }
     public void TitleButton()
     {
