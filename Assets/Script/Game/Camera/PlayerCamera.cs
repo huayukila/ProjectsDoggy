@@ -4,10 +4,9 @@ public class PlayerCamera : MonoBehaviour
 {
     public GameObject Camera;
     public GameObject Player;
-    [Header("コントローラ感度")] public float LookSpeed = 4f; //コントローラ感度
+    [Header("コントローラ感度")] public float LookSpeed = 2.4f; //コントローラ感度
     [Header("マウス感度")] public float MouseSensitivity = 100f; //マウス感度
     private float _rotationY = 0f;
-    private float _rotationX = 0f;
 
     void Start()
     {
@@ -25,7 +24,7 @@ public class PlayerCamera : MonoBehaviour
         //上下制御（カメラだけ上下制御）
         float lookVertical = Input.GetAxis("RigthStickVertical");
 
-        _rotationY -= lookVertical * LookSpeed; //コントローラ制御
+        _rotationY -= lookVertical * LookSpeed * 0.6f; //コントローラ制御
         _rotationY += mouseY; //マウス制御
         _rotationY = Mathf.Clamp(_rotationY, -60f, 60f);
 
@@ -34,9 +33,10 @@ public class PlayerCamera : MonoBehaviour
         //左右制御（プレイヤが左右制御）
         float lookHorizontal = Input.GetAxis("RightStickHorizontal");
 
-        _rotationX += lookHorizontal * LookSpeed; //コントローラ制御
-        _rotationX += mouseX; //マウス制御
+        // _rotationX += lookHorizontal * LookSpeed; //コントローラ制御
+        // _rotationX += mouseX; //マウス制御
 
-        Player.transform.localRotation = Quaternion.Euler(0, _rotationX - 90f, 0f);
+        Player.transform.localRotation =
+            Quaternion.Euler(0, Player.transform.localRotation.eulerAngles.y + mouseX + lookHorizontal, 0f);
     }
 }
