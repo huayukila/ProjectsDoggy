@@ -1705,6 +1705,7 @@ GameObject:
   - component: {fileID: 352772971}
   - component: {fileID: 352772973}
   - component: {fileID: 352772974}
+  - component: {fileID: 352772975}
   m_Layer: 0
   m_Name: Chase_Ruins
   m_TagString: Untagged
@@ -1872,6 +1873,27 @@ MonoBehaviour:
   Director: {fileID: 352772971}
   spawnPoint: {fileID: 282636669}
   enemy: {fileID: 539993302}
+--- !u!65 &352772975
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352772970}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.1829987, y: 3.4286542, z: 12.284088}
+  m_Center: {x: 0.44789124, y: 1.4843271, z: 5.642044}
 --- !u!1 &370357076
 GameObject:
   m_ObjectHideFlags: 0
