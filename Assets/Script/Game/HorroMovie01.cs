@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -5,12 +6,27 @@ public class HorroMovie01 : MonoBehaviour
 {
     public PlayableDirector Director;
     public Transform spawnPoint;
+    public Transform endCamera;
+
     public Transform enemy;
     private Transform player;
+
+    private Vector3 enemyStartPoint;
+    private Quaternion enemyRotate;
 
     private void Start()
     {
         Director.stopped += Stop;
+        enemyStartPoint = enemy.position;
+        enemyRotate = enemy.rotation;
+    }
+
+    public void ReInit()
+    {
+        enemy.transform.position = enemyStartPoint;
+        enemy.transform.rotation = enemyRotate;
+        enemy.gameObject.SetActive(false);
+        gameObject.SetActive(true);
     }
 
     void Stop(PlayableDirector obj)
@@ -18,7 +34,8 @@ public class HorroMovie01 : MonoBehaviour
         gameObject.SetActive(false);
 
         enemy.gameObject.SetActive(true);
-        player.transform.position = spawnPoint.position;
+        player.transform.rotation = endCamera.transform.rotation;
+        player.GetComponent<StateMachine>().enabled = true;
         player = null;
     }
 
@@ -27,6 +44,8 @@ public class HorroMovie01 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player = other.transform;
+            player.GetComponent<StateMachine>().enabled = false;
+            player.transform.position = spawnPoint.position;
             Director.Play();
         }
     }
