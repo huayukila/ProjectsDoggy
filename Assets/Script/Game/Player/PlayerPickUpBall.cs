@@ -23,6 +23,7 @@ public class PlayerPickUpBall : MonoBehaviour
         }
     }
 
+    public GameObject Key_UI;
     public float PickupDistance = 1f;  // ピックアップの距離
     public LayerMask PickupLayer;  // ピックアップの対象レイヤー
     public List<Renderer> PlayerBalls = new List<Renderer>();
@@ -92,6 +93,10 @@ public class PlayerPickUpBall : MonoBehaviour
                 {
                     hit.collider.gameObject.SetActive(false);  // オブジェクトを非アクティブにする
                     AddBollCnt();  // ボールの数を増やす
+                    if (Key_UI !=null)
+                    {
+                        Key_UI.SetActive(false);
+                    }
                 }
                 // 当たったオブジェクトが「BallGimmick」レイヤーの場合
                 else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("BallGimmick"))
