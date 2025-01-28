@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 821760944342765597}
   - component: {fileID: 8528646496272206412}
   m_Layer: 0
-  m_Name: BeginTextCollider
+  m_Name: BeginTextTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2967834, y: 3.6703167, z: 5.777748}
-  m_Center: {x: 0.14839172, y: 0.88315034, z: 0.43289566}
+  m_Size: {x: 28.828491, y: 3.6703167, z: 23.590542}
+  m_Center: {x: 13.914246, y: 0.88315034, z: 0.9597988}
 --- !u!114 &8528646496272206412
 MonoBehaviour:
   m_ObjectHideFlags: 0
