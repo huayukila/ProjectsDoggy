@@ -44,12 +44,17 @@ public class PauseMenu : MonoBehaviour
                 ResumeButton();
             }
         }
+        if (Input.GetButtonDown("AButton") && GameObject_PauseMenu.gameObject.activeSelf == true)
+        {
+            ResumeButton();
+        }
     }
     public void UpdateCheckPointPosition()
     {
         if (PlayerCon != null)
         {
             _checkPointPosition = PlayerCon.transform.position;
+            Debug.Log("UpdateCheckPoint");
         }
     }
     public void ResumeButton()

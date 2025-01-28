@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class PlayerDied : MonoBehaviour
 
                     camera.GetComponent<CinemachineCamera>().enabled = true;
 
+                    StartCoroutine(PlayerReborn());
+
                     if (gameObject.activeSelf)
                     {
                         //gameObject.SetActive(false);
@@ -28,6 +31,16 @@ public class PlayerDied : MonoBehaviour
                 }
             }
 
+        }
+    }
+    IEnumerator PlayerReborn()
+    {
+        while (true)
+        {
+            Debug.Log("PlayerReborn() is Start");
+            yield return new WaitForSeconds(2);
+            EventSystem.Send<EventLoadCheckPoint>();
+            yield break;
         }
     }
 }
