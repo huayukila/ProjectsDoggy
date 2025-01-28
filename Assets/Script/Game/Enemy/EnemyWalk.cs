@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class EnemyWalk : State
 {
-    int pointIndex=0;
+    int pointIndex = 0;
     Vector3 currentTargetPos;
     NavMeshAgent agent;
     float speed = 3.0f;
@@ -12,6 +12,8 @@ public class EnemyWalk : State
     {
         _stateMachine.Animator.Play("WALKING");
         agent = (_stateMachine as EnemyStateMachine).NavMeshAgent;
+        if ((_stateMachine as EnemyStateMachine).walkPoints.Length <= 0)
+            return;
         currentTargetPos = (_stateMachine as EnemyStateMachine).walkPoints[pointIndex].position;
     }
 
@@ -27,13 +29,12 @@ public class EnemyWalk : State
         if (Vector3.Distance(_stateMachine.transform.position, currentTargetPos) < 1f)
         {
             pointIndex++;
-            pointIndex = pointIndex%(_stateMachine as EnemyStateMachine).walkPoints.Length;
+            pointIndex = pointIndex % (_stateMachine as EnemyStateMachine).walkPoints.Length;
             currentTargetPos = (_stateMachine as EnemyStateMachine).walkPoints[pointIndex].position;
             _stateMachine.ChangeStateTo("EnemyStand");
         }
 
         agent.SetDestination(currentTargetPos);
-
     }
 
     public override void OnExit()
@@ -50,6 +51,4 @@ public class EnemyWalk : State
     {
         // •¨—‰‰ŽZ‚ª•K—v‚Èˆ—‚ª‚ ‚ê‚Î‚±‚±‚É’Ç‰Á
     }
-   
 }
-
