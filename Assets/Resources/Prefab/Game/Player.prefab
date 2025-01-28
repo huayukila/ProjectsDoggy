@@ -585,7 +585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 6431549899233296578}
   Player: {fileID: 1504852798950282523}
-  LookSpeed: 4
+  LookSpeed: 2.4
   MouseSensitivity: 100
 --- !u!114 &7205242743631378012
 MonoBehaviour:
