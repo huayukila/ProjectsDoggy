@@ -43,7 +43,7 @@ public class EnemyJumpScare2 : MonoBehaviour
         enemyAnimator.Play("Crawl");
         enemyAudio.Play();
         // Enemy.transform.DOLookAt(position, 0.1f);
-        Enemy.transform.DOMove(Player.position, 1f);
+        Enemy.transform.DOMove(Player.position + new Vector3(0, -1.4f, 0), 1f);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -10,7 +10,6 @@ public class Gimiku : MonoBehaviour
     {
         EventSystem.Register<EventOpenTheDoor>(e => { HandleOpenTheDoor(); })
             .UnregisterWhenGameObjectDestroyed(gameObject);
-        HandleOpenTheDoor();
     }
     
     void HandleOpenTheDoor()
