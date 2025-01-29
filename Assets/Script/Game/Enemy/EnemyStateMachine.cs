@@ -5,17 +5,15 @@ using UnityEngine.AI;
 public class EnemyStateMachine : StateMachine
 {
     public Transform[] walkPoints;
-    [HideInInspector]
-    public Transform player;       // プレイヤーのTransform（追跡対象）
-    [HideInInspector]
-    public bool playerInSight;     // プレイヤーが視界内かどうか
+    [HideInInspector] public Transform player; // プレイヤーのTransform（追跡対象）
+    [HideInInspector] public bool playerInSight; // プレイヤーが視界内かどうか
     public float ChaseDistance;
-    [HideInInspector]
-    public NavMeshAgent NavMeshAgent;
+    [HideInInspector] public NavMeshAgent NavMeshAgent;
 
     public GameObject enemyAreaLight;
 
     private SphereCollider collider;
+
     protected override void Init()
     {
         collider = GetComponent<SphereCollider>();
@@ -30,6 +28,12 @@ public class EnemyStateMachine : StateMachine
         {
             enemyAreaLight.SetActive(true);
             ChangeStateTo("Enemycatch");
+        }).UnregisterWhenGameObjectDestroyed(gameObject);
+
+        EventSystem.Register<EventLoadCheckPoint>(e =>
+        {
+            enemyAreaLight.SetActive(false);
+            ChangeStateTo("Walk");
         }).UnregisterWhenGameObjectDestroyed(gameObject);
     }
 
