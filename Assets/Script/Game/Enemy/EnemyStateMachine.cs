@@ -33,7 +33,7 @@ public class EnemyStateMachine : StateMachine
         EventSystem.Register<EventLoadCheckPoint>(e =>
         {
             enemyAreaLight.SetActive(false);
-            ChangeStateTo("Walk");
+            ChangeStateTo("EnemyWalk");
         }).UnregisterWhenGameObjectDestroyed(gameObject);
     }
 
