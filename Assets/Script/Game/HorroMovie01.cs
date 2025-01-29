@@ -1,5 +1,6 @@
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Playables;
 
 public class HorroMovie01 : MonoBehaviour
@@ -20,16 +21,12 @@ public class HorroMovie01 : MonoBehaviour
         enemyStartPoint = enemy.position;
         enemyRotate = enemy.rotation;
 
-        EventSystem.Register<EventLoadCheckPoint>(e =>
-        {
-            ReInit();
-        });
+        EventSystem.Register<EventLoadCheckPoint>(e => { ReInit(); }).UnregisterWhenGameObjectDestroyed(gameObject);
     }
 
     public void ReInit()
     {
-        enemy.transform.position = enemyStartPoint;
-        enemy.transform.rotation = enemyRotate;
+        enemy.GetComponent<NavMeshAgent>().Warp(enemyStartPoint);
         enemy.gameObject.SetActive(false);
         gameObject.SetActive(true);
     }

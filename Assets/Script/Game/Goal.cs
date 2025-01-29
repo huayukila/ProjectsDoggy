@@ -7,6 +7,7 @@ public class Goal : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             EventSystem.Send<EventGameClear>();
+            gameObject.SetActive(false);
         }
     }
 }
