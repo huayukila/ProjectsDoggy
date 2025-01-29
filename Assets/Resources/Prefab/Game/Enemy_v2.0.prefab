@@ -1336,7 +1336,7 @@ GameObject:
   - component: {fileID: 7415351979204396497}
   m_Layer: 0
   m_Name: Enemy_v2.0
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1395,6 +1395,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -1588,9 +1594,10 @@ GameObject:
   - component: {fileID: 1506217285599932068}
   - component: {fileID: 4983516519077571911}
   - component: {fileID: 4284771044766738398}
+  - component: {fileID: 2719054750980253104}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1670,6 +1677,29 @@ MonoBehaviour:
   AmplitudeGain: 0.4
   FrequencyGain: 0.4
   m_NoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!136 &2719054750980253104
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3863203677138780935}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.20658965
+  m_Height: 1.2472056
+  m_Direction: 1
+  m_Center: {x: 0, y: -1.18, z: 0.24}
 --- !u!1 &4268080361714327600
 GameObject:
   m_ObjectHideFlags: 0
