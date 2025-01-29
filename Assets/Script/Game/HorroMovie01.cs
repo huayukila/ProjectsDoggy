@@ -19,6 +19,11 @@ public class HorroMovie01 : MonoBehaviour
         Director.stopped += Stop;
         enemyStartPoint = enemy.position;
         enemyRotate = enemy.rotation;
+
+        EventSystem.Register<EventLoadCheckPoint>(e =>
+        {
+            ReInit();
+        });
     }
 
     public void ReInit()
