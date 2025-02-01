@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
 
     private Vector3 _checkPointPosition = default;
 
-    private bool _isPauseMenuON = false;
+    //private bool _isPauseMenuON = false;
 
     private void Awake()
     {
