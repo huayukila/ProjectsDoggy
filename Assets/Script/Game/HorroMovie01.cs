@@ -27,6 +27,7 @@ public class HorroMovie01 : MonoBehaviour
     public void ReInit()
     {
         enemy.GetComponent<NavMeshAgent>().Warp(enemyStartPoint);
+        enemy.GetComponent<NavMeshAgent>().ResetPath();
         enemy.gameObject.SetActive(false);
         gameObject.SetActive(true);
     }
@@ -36,7 +37,11 @@ public class HorroMovie01 : MonoBehaviour
         gameObject.SetActive(false);
 
         enemy.gameObject.SetActive(true);
+
+        enemy.GetComponent<StateMachine>().ChangeStateTo("Run");
         player.transform.rotation = endCamera.transform.rotation;
+
+
         player.GetComponent<StateMachine>().enabled = true;
         player = null;
     }
