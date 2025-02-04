@@ -6285,7 +6285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2810827723386994177, guid: 344e5bc5b26a34542848678562e23c45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -89.061
+      value: -90.73
       objectReference: {fileID: 0}
     - target: {fileID: 2810827723386994177, guid: 344e5bc5b26a34542848678562e23c45, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6293,7 +6293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2810827723386994177, guid: 344e5bc5b26a34542848678562e23c45, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 210.373
+      value: 209.52
       objectReference: {fileID: 0}
     - target: {fileID: 2810827723386994177, guid: 344e5bc5b26a34542848678562e23c45, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9642,7 +9642,7 @@ Transform:
   m_GameObject: {fileID: 1328470416}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -97.47, y: 0, z: 208.13}
+  m_LocalPosition: {x: -88.98, y: 0, z: 208.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15720,6 +15720,22 @@ PrefabInstance:
     - target: {fileID: 4371659101878510096, guid: ac10d599567e7d04cafb879ebe53be2b, type: 3}
       propertyPath: m_LocalPosition.z
       value: -130.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450930224331882787, guid: ac10d599567e7d04cafb879ebe53be2b, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.05074331
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450930224331882787, guid: ac10d599567e7d04cafb879ebe53be2b, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.030232742
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450930224331882787, guid: ac10d599567e7d04cafb879ebe53be2b, type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0.017153027
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450930224331882787, guid: ac10d599567e7d04cafb879ebe53be2b, type: 3}
+      propertyPath: m_LODs.Array.data[3].screenRelativeHeight
+      value: 0.0038987743
       objectReference: {fileID: 0}
     - target: {fileID: 4640984353627007406, guid: ac10d599567e7d04cafb879ebe53be2b, type: 3}
       propertyPath: m_StaticEditorFlags
