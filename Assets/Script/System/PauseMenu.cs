@@ -37,6 +37,8 @@ public class PauseMenu : MonoBehaviour
             {
                 EventSystem.Send<EventGamePause>();
                 GameObject_PauseMenu.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
             else
             {
@@ -60,6 +62,8 @@ public class PauseMenu : MonoBehaviour
     {
         EventSystem.Send<EventGameResume>();
         GameObject_PauseMenu.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     public void LoadCheckPointButton()
     {
