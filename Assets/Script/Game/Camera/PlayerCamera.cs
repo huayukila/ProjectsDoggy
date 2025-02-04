@@ -37,6 +37,6 @@ public class PlayerCamera : MonoBehaviour
         // _rotationX += mouseX; //É}ÉEÉXêßå‰
 
         Player.transform.localRotation =
-            Quaternion.Euler(0, Player.transform.localRotation.eulerAngles.y + mouseX + lookHorizontal, 0f);
+            Quaternion.Euler(0, Player.transform.localRotation.eulerAngles.y + mouseX + (lookHorizontal * 1.8f), 0f);
     }
 }
