@@ -31,7 +31,19 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("PauseMenu") || Input.GetKeyDown(KeyCode.P))
+        if (Input.GetButtonDown("PauseMenu"))
+        {
+            if (GameObject_PauseMenu.gameObject.activeSelf == false)
+            {
+                EventSystem.Send<EventGamePause>();
+                GameObject_PauseMenu.SetActive(true);
+            }
+            else
+            {
+                ResumeButton();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (GameObject_PauseMenu.gameObject.activeSelf == false)
             {
@@ -45,6 +57,8 @@ public class PauseMenu : MonoBehaviour
                 ResumeButton();
             }
         }
+
+
         if (Input.GetButtonDown("AButton") && GameObject_PauseMenu.gameObject.activeSelf == true)
         {
             ResumeButton();
