@@ -6,7 +6,7 @@ public class Goal : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneSwitcher.Instance.Loading(1.5f, "Ending");
+            SceneSwitcher.Instance.Loading(3f, "Ending");
             gameObject.SetActive(false);
         }
     }
