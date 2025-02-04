@@ -269,6 +269,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2470912530290459240, guid: df936f9bf3f09974c8119a25cfe103ee, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4914362102097005069, guid: df936f9bf3f09974c8119a25cfe103ee, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -278,7 +282,8 @@ PrefabInstance:
       value: CenterUI_Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5516554851791215239, guid: df936f9bf3f09974c8119a25cfe103ee, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df936f9bf3f09974c8119a25cfe103ee, type: 3}
